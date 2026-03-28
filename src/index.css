@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 228 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 45% 12%;
+
+    --primary: 230 60% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 45% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 93%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 228 45% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 230 60% 22%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient: linear-gradient(135deg, hsl(230 60% 22%), hsl(230 45% 35%), hsl(230 60% 22%));
+    --accent-gradient: linear-gradient(135deg, hsl(45 100% 51%), hsl(35 95% 45%));
+    --card-shadow: 0 4px 30px -8px hsl(230 60% 22% / 0.12);
+    --card-hover-shadow: 0 12px 40px -8px hsl(230 60% 22% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 228 45% 8%;
+    --foreground: 220 20% 95%;
+    --card: 228 40% 12%;
+    --card-foreground: 220 20% 95%;
+    --popover: 228 40% 12%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 230 60% 20%;
+    --primary-foreground: 220 20% 95%;
+    --secondary: 230 45% 25%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 228 30% 18%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 228 45% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 228 30% 20%;
+    --input: 228 30% 20%;
+    --ring: 45 100% 51%;
+    
+    --hero-gradient: linear-gradient(135deg, hsl(230 60% 10%), hsl(230 45% 15%), hsl(230 60% 10%));
+    --accent-gradient: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 95% 50%));
+    --card-shadow: 0 4px 30px -8px rgba(0,0,0,0.5);
+    --card-hover-shadow: 0 12px 40px -8px rgba(0,0,0,0.8);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    @apply bg-background text-foreground font-body antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--accent-gradient);
+  }
+
+  .bg-hero-gradient {
+    background-image: var(--hero-gradient);
+  }
+
+  .bg-accent-gradient {
+    background-image: var(--accent-gradient);
+  }
+
+  .card-shadow {
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-hover-shadow {
+    box-shadow: var(--card-hover-shadow);
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-white/10 relative overflow-hidden;
+  }
+
+  .mask-vertical-fade {
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
