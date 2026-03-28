@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import aboutBg from "@/assets/about-bg.jpg";
-import directorImg from "@/assets/director.jpg";
+import directorImg from "@/assets/director.jpeg";
 import { Award, Users, BookOpen, Target, CheckCircle, GraduationCap } from "lucide-react";
 
 const milestones = [
@@ -20,27 +20,40 @@ const About = () => {
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={aboutBg} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-primary/85" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="font-display text-4xl lg:text-6xl font-bold text-primary-foreground mb-4"
-            >
-              About <span className="text-accent">Ravindra's Institute</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-primary-foreground/80 text-lg max-w-2xl mx-auto"
-            >
-              Founder of GS NCERT Course — shaping careers and building futures for UPSC aspirants.
-            </motion.p>
-          </div>
+        <div className="container mx-auto px-4 relative z-10">
+  <div className="grid md:grid-cols-2 gap-10 items-center">
+
+    {/* LEFT - TEXT */}
+    <div>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="font-display text-4xl lg:text-6xl font-bold text-primary-foreground mb-4"
+      >
+        About <span className="text-accent">Ravindra's Institute</span>
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="text-primary-foreground/80 text-lg max-w-xl"
+      >
+        Founder of GS NCERT Course – shaping careers and building futures for UPSC aspirants.
+      </motion.p>
+    </div>
+
+    {/* RIGHT - IMAGE */}
+    <div className="flex justify-center">
+      <img
+        src={directorImg}
+        alt="Director"
+        className="w-full max-w-md rounded-lg shadow-lg"
+      />
+    </div>
+
+  </div>
+</div>
         </section>
 
       {/* Mission */}
