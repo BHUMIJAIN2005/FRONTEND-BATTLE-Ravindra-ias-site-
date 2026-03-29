@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 
+import directorImg from "@/assets/director.jpeg";
 import { ScrollRevealOverlay } from "@/components/ScrollRevealOverlay";
 
 const DirectorSection = () => {
@@ -19,7 +20,11 @@ const DirectorSection = () => {
             <div className="relative shadow-2xl border border-white/40 rounded-2xl">
               <ScrollRevealOverlay color="bg-accent">
                 <div className="relative group w-full h-full object-cover rounded-2xl overflow-hidden bg-background">
-                  <img src="/RAVINDERSIRIMAGE.PNG" alt="Ravindra IAS Director" className="w-full max-w-md mx-auto group-hover:scale-105 transition-transform duration-700" loading="lazy" width={512} height={640} />
+                  <img 
+                    src={directorImg} 
+                    alt="Ravindra IAS Director" 
+                    className="w-full max-w-md mx-auto group-hover:scale-105 transition-transform duration-700"
+                  />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/95 via-primary/80 to-transparent p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                     <p className="text-white font-display text-2xl font-bold drop-shadow-md">Ravindra Sir</p>
                     <p className="text-accent text-sm font-bold uppercase tracking-widest mt-1">Founder & Director</p>

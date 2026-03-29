@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import aboutBg from "@/assets/about-bg.jpg";
-import directorImg from "@/assets/director.jpeg";
+import directorImg from "../assets/director.jpeg";
 import { Award, Users, BookOpen, Target, CheckCircle, GraduationCap } from "lucide-react";
 
 const milestones = [
